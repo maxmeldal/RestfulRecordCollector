@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Records</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Year</th>
+    </tr>
+    <tr th:each="record : ${records}">
+        <td th:text="${record.id}"></td>
+        <td th:text="${record.title}"></td>
+        <td th:text="${record.artist}"></td>
+        <td th:text="${record.year}"></td>
+        <td><a th:href="@{'/update/' + ${record.id}}">Update</a></td>
+        <td><a th:href="@{'/delete/' + ${record.id}}">Delete</a></td>
+        <td><a th:href="@{'/record?id=' + ${record.id}}">View JSON format</a></td>
+    </tr>
+</table>
+
+<a href="create">Add record to collection</a>
+<a href="records">View all records as JSON List</a>
+</body>
+</html>
