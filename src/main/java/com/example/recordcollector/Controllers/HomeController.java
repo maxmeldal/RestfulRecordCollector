@@ -50,5 +50,4 @@ public class HomeController {
         recordService.delete(id);
         return "redirect:/";
     }
-
 }
