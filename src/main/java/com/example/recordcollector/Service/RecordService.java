@@ -14,8 +14,7 @@ public class RecordService {
     RecordRepository recordRepository;
 
     public Record Create (Record record){
-        recordRepository.create(record);
-        return record;
+        return recordRepository.create(record);
     }
 
     public Record read (int id){
